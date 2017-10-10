@@ -1,4 +1,4 @@
-package com.ppdai.actuator;
+package com.yzl.actuator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

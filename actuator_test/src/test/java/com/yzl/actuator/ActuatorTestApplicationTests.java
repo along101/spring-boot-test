@@ -1,4 +1,4 @@
-package com.ppdai.actuator;
+package com.yzl.actuator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

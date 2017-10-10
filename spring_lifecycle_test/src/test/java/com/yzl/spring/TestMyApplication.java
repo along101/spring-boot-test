@@ -1,4 +1,4 @@
-package com.ppdai.spring;
+package com.yzl.spring;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

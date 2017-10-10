@@ -1,4 +1,4 @@
-package com.ppdai.spring;
+package com.yzl.spring;
 
 import java.beans.PropertyDescriptor;
 

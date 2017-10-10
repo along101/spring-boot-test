@@ -1,4 +1,4 @@
-package com.ppdai.actuator;
+package com.yzl.actuator;
 import java.util.Collections;
 
 import org.springframework.boot.actuate.info.Info;

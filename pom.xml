@@ -3,17 +3,17 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.ppdai.spring.test</groupId>
-	<artifactId>spting-test</artifactId>
+	<groupId>com.yzl.spring.test</groupId>
+	<artifactId>spring-boot-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>spting-test</name>
+	<name>spring-boot-test</name>
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
 		<module>actuator_test</module>
-		<module>lifecycle_test</module>
+		<module>spring_lifecycle_test</module>
 	</modules>
 
 

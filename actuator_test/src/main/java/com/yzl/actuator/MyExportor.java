@@ -1,4 +1,4 @@
-package com.ppdai.actuator;
+package com.yzl.actuator;
 
 import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
 import org.springframework.boot.actuate.metrics.Metric;
