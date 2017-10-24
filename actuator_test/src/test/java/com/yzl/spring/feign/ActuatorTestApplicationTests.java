@@ -1,4 +1,4 @@
-package com.yzl.actuator;
+package com.yzl.spring.feign;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

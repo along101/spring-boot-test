@@ -1,4 +1,4 @@
-package com.yzl.actuator;
+package com.yzl.spring.feign;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.metrics.GaugeService;

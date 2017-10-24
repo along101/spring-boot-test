@@ -1,4 +1,4 @@
-package com.yzl.actuator;
+package com.yzl.spring.feign;
 
 import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
 import org.springframework.boot.actuate.metrics.Metric;
