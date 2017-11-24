@@ -16,7 +16,9 @@
 		<module>spring_lifecycle_test</module>
 		<module>feign_test</module>
 		<module>util_test</module>
-	</modules>
+        <module>assembly</module>
+        <module>annotation_demo</module>
+    </modules>
 
 
 </project>
