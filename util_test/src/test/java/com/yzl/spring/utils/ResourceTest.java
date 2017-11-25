@@ -1,4 +1,4 @@
-package com.yzl.spring;
+package com.yzl.spring.utils;
 
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
