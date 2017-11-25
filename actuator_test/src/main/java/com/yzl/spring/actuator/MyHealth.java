@@ -1,4 +1,4 @@
-package com.yzl.spring.feign;
+package com.yzl.spring.actuator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;

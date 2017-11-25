@@ -1,4 +1,4 @@
-package com.yzl.spring.feign;
+package com.yzl.spring.actuator;
 import java.util.Collections;
 
 import org.springframework.boot.actuate.info.Info;
