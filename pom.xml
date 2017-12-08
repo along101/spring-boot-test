@@ -18,6 +18,8 @@
 		<module>util_test</module>
         <module>assembly</module>
         <module>annotation_demo</module>
+        <module>guice_test</module>
+        <module>spring_event</module>
     </modules>
 
 

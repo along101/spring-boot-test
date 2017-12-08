@@ -6,15 +6,20 @@ import org.springframework.boot.actuate.metrics.writer.Delta;
 import org.springframework.boot.actuate.metrics.writer.GaugeWriter;
 import org.springframework.boot.actuate.metrics.writer.MetricWriter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yinzuolong on 2017/3/30.
  */
 @RestController
 public class MyController {
-//
+    //
 //    @Autowired
 //    private MetricWriter metricWriter;
     @Autowired
@@ -25,6 +30,15 @@ public class MyController {
     public String shutdown() {
         isHealth = false;
         return "shutdown";
+    }
+
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    public Object testPost(@RequestBody Map<String, String> map) {
+        if (map == null) {
+            map = new HashMap<>();
+        }
+        map.put("123", "345");
+        return map;
     }
 
     @RequestMapping("/s2")
