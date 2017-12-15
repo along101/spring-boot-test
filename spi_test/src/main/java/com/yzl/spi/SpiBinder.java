@@ -1,0 +1,13 @@
+package com.yzl.spi;
+
+
+import java.lang.annotation.*;
+
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE})
+public @interface SpiBinder {
+    String name() default "DEFAULT";
+
+    int order() default 0;
+}
