@@ -20,7 +20,8 @@
         <module>annotation_demo</module>
         <module>guice_test</module>
         <module>spring_event</module>
-    </modules>
+		<module>spi_test</module>
+	</modules>
 
 
 </project>
