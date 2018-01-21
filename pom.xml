@@ -12,16 +12,18 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>actuator_test</module>
-        <module>spring_lifecycle_test</module>
-        <module>feign_test</module>
-        <module>spring_util_test</module>
+        <module>actuator-test</module>
+        <module>spring-lifecycle-test</module>
+        <module>feign-test</module>
+        <module>spring-util-test</module>
         <module>assembly</module>
-        <module>annotation_demo</module>
-        <module>guice_test</module>
-        <module>spring_event</module>
-        <module>spi_test</module>
-        <module>spring_inject</module>
+        <module>annotation-demo</module>
+        <module>guice-test</module>
+        <module>spring-event</module>
+        <module>spi-test</module>
+        <module>spring-inject</module>
+        <module>rxjava-test</module>
+        <module>nio</module>
     </modules>
 
     <properties>
