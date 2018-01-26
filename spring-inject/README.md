@@ -1,0 +1,1 @@
+ObjectProvider demo参考 AnInterfaceHandler

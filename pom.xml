@@ -24,6 +24,9 @@
         <module>spring-inject</module>
         <module>rxjava-test</module>
         <module>nio</module>
+        <module>netty-test</module>
+        <module>vertx-test</module>
+        <module>spring-DefferedResult-test</module>
     </modules>
 
     <properties>

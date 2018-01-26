@@ -1,4 +1,4 @@
-package com.yzl.spring.test.service;
+package com.yzl.spring.test.objectprovider;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;

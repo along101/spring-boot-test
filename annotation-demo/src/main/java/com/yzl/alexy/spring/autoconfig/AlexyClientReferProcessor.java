@@ -34,7 +34,7 @@ public class AlexyClientReferProcessor implements BeanPostProcessor {
                     }
                 }
             } catch (Exception e) {
-                throw new BeanInitializationException("Failed to init remote service reference at filed " + field.getName()
+                throw new BeanInitializationException("Failed to init remote objectprovider reference at filed " + field.getName()
                         + " in class " + bean.getClass().getName(), e);
             }
         }

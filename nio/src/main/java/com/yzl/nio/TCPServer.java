@@ -14,6 +14,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 //TODO 服务端用多线程处理socket请求，每次只能写入一部分数据到缓冲区，流如果没有结束，如何保证是同一个线程处理相同的channel？
+//参考netty
 public class TCPServer {
 
     private ExecutorService pool;

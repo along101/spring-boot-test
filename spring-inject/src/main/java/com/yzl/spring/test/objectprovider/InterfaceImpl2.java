@@ -1,4 +1,4 @@
-package com.yzl.spring.test.service;
+package com.yzl.spring.test.objectprovider;
 
 import org.springframework.stereotype.Component;
 
