@@ -73,7 +73,7 @@ public class TCPClient {
 
     public static void main(String[] args) throws IOException {
         TCPClient client = new TCPClient();
-        client.connect("localhost", 1978);
+        client.connect("localhost", 8001);
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < 1000; i++) {
             s.append("1");
