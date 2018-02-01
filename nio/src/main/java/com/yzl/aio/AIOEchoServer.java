@@ -32,6 +32,15 @@ public class AIOEchoServer {
                     channel.read(readBuff, readBuff, new CompletionHandler<Integer, ByteBuffer>() {
                         @Override
                         public void completed(Integer result, ByteBuffer readBuff) {
+                            //没有数据，就
+                            if (result == -1) {
+                                try {
+                                    channel.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                return;
+                            }
                             readBuff.flip();
                             if (readBuff.remaining() > 0) {
                                 String value = new String(readBuff.array(), 0, readBuff.limit());

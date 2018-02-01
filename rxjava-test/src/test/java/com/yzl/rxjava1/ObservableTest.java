@@ -6,6 +6,7 @@ import rx.Observable;
 import java.util.Arrays;
 import java.util.List;
 
+//TODO 测试其他场景
 public class ObservableTest {
     @Test
     public void name() {
