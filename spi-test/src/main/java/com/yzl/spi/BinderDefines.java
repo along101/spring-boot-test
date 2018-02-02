@@ -47,26 +47,26 @@ public class BinderDefines {
     }
 
     public <T> void registerBinderDefine(BinderDefine<T> binderDefine) {
-        BinderDefine<T> newBinderfine = new BinderDefine<>();
-        newBinderfine.setInterfaceClass(binderDefine.getInterfaceClass());
-        newBinderfine.setName(StringUtils.isBlank(binderDefine.getName()) ? "DEFAULT": binderDefine.getName());
-        newBinderfine.setBinderClass(binderDefine.getBinderClass());
-        newBinderfine.setScope(binderDefine.getScope() == null ? Scope.SINGLETON : binderDefine.getScope());
-        newBinderfine.setOrder(binderDefine.getOrder());
+        BinderDefine<T> newBinderDefine = new BinderDefine<>();
+        newBinderDefine.setInterfaceClass(binderDefine.getInterfaceClass());
+        newBinderDefine.setName(StringUtils.isBlank(binderDefine.getName()) ? "DEFAULT": binderDefine.getName());
+        newBinderDefine.setBinderClass(binderDefine.getBinderClass());
+        newBinderDefine.setScope(binderDefine.getScope() == null ? Scope.SINGLETON : binderDefine.getScope());
+        newBinderDefine.setOrder(binderDefine.getOrder());
         Map<String, BinderDefine<?>> binderMap = binderDefines.get(binderDefine.getInterfaceClass());
         if (binderMap == null) {
             binderMap = new ConcurrentHashMap<>();
             binderDefines.put(binderDefine.getInterfaceClass(), binderMap);
         }
-        if (binderMap.containsKey(newBinderfine.getName())) {
-            BinderDefine<?> cached = binderMap.get(newBinderfine.getName());
-            if (!cached.equals(newBinderfine)) {
+        if (binderMap.containsKey(newBinderDefine.getName())) {
+            BinderDefine<?> cached = binderMap.get(newBinderDefine.getName());
+            if (!cached.equals(newBinderDefine)) {
                 throw new RuntimeException(String.format("Interface %s binder name=%s aready exist with class %s,can not bind class %s.",
-                        newBinderfine.getInterfaceClass(), newBinderfine.getName(), newBinderfine.getBinderClass(), cached.getBinderClass()));
+                        newBinderDefine.getInterfaceClass(), newBinderDefine.getName(), newBinderDefine.getBinderClass(), cached.getBinderClass()));
             }
             return;
         }
-        binderMap.put(newBinderfine.getName(), newBinderfine);
+        binderMap.put(newBinderDefine.getName(), newBinderDefine);
     }
 
     public <T> BinderDefine<T> getBinderDefine(Class<T> interfaceClass, String name) {
