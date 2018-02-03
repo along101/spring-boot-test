@@ -17,6 +17,7 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicHeaderElementIterator;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,6 +28,11 @@ public class ApacheHttpClientTest {
     @Before
     public void setUp() throws Exception {
         TestServer.start();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        TestServer.stop();
     }
 
     @Test
