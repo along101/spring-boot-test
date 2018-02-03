@@ -1,5 +1,6 @@
 package com.yzl.test.httpclient;
 
+import com.sun.xml.internal.ws.util.CompletedFuture;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.RequestBuilder;
@@ -12,13 +13,16 @@ import org.apache.http.nio.client.methods.AsyncCharConsumer;
 import org.apache.http.nio.client.methods.HttpAsyncMethods;
 import org.apache.http.nio.protocol.HttpAsyncRequestProducer;
 import org.apache.http.protocol.HttpContext;
+import org.apache.http.util.EntityUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.CharBuffer;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
@@ -136,5 +140,49 @@ public class ApacheHttpAsyncClientTest {
         });
         System.out.println("Execute complete.");
         latch.await();
+    }
+
+    @Test
+    public void test4() throws Exception {
+        //与CompletableFuture结合
+        String uri = "http://localhost:8080/test";
+        HttpRequestBase request = (HttpRequestBase) RequestBuilder.get(uri).build();
+        send(request);
+        String resp = send(request).thenApply(response -> {
+            try {
+                String result = EntityUtils.toString(response.getEntity(), "utf-8");
+                System.out.println(result);
+                return result;
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }).exceptionally(e -> {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }).get();
+        System.out.println("complete: " + resp);
+
+    }
+
+    private CompletableFuture<HttpResponse> send(HttpRequestBase request) {
+        CompletableFuture<HttpResponse> completableFuture = new CompletableFuture<>();
+        httpclient.execute(request, new FutureCallback<HttpResponse>() {
+
+            @Override
+            public void completed(HttpResponse result) {
+                completableFuture.complete(result);
+            }
+
+            @Override
+            public void failed(Exception ex) {
+                completableFuture.completeExceptionally(ex);
+            }
+
+            @Override
+            public void cancelled() {
+                completableFuture.cancel(true);
+            }
+        });
+        return completableFuture;
     }
 }

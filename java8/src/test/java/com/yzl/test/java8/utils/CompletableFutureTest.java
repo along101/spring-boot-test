@@ -176,4 +176,13 @@ public class CompletableFutureTest {
         System.out.println(completableFuture3.get());
     }
 
+    @Test
+    public void test8() {
+        CompletableFuture.supplyAsync(() -> {
+            sleep(2);
+            System.out.println("complete");
+            return 2;
+        });
+        sleep(3);
+    }
 }
