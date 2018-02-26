@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.yzl.spring.test</groupId>
-	<artifactId>hello_service</artifactId>
+	<artifactId>hello-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>hello_service</name>
+	<name>hello-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -38,7 +38,7 @@
 
 		<dependency>
 			<groupId>com.yzl.spring.test</groupId>
-			<artifactId>hello_service_api</artifactId>
+			<artifactId>hello-service-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

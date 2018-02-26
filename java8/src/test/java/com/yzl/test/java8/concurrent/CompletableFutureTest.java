@@ -1,4 +1,4 @@
-package com.yzl.test.java8.utils;
+package com.yzl.test.java8.concurrent;
 
 import org.junit.Test;
 

@@ -29,6 +29,7 @@
         <module>spring-DefferedResult-test</module>
         <module>http-client</module>
         <module>java8</module>
+        <module>mock</module>
     </modules>
 
     <properties>
