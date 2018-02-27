@@ -16,20 +16,10 @@
         <module>spring-lifecycle-test</module>
         <module>feign-test</module>
         <module>spring-util-test</module>
-        <module>assembly</module>
         <module>annotation-demo</module>
-        <module>guice-test</module>
         <module>spring-event</module>
-        <module>spi-test</module>
         <module>spring-inject</module>
-        <module>rxjava-test</module>
-        <module>nio</module>
-        <module>netty-test</module>
-        <module>vertx-test</module>
         <module>spring-DefferedResult-test</module>
-        <module>http-client</module>
-        <module>java8</module>
-        <module>mock</module>
     </modules>
 
     <properties>
