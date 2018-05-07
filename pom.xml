@@ -20,6 +20,8 @@
         <module>spring-event</module>
         <module>spring-inject</module>
         <module>spring-DefferedResult-test</module>
+        <module>close-context</module>
+        <module>archaius-test</module>
     </modules>
 
     <properties>

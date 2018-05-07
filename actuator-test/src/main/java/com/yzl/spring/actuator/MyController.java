@@ -32,6 +32,12 @@ public class MyController {
         return "shutdown";
     }
 
+    @RequestMapping("/test")
+    public Object test() {
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("1","2");
+        return map;
+    }
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public Object testPost(@RequestBody Map<String, String> map) {
         if (map == null) {
