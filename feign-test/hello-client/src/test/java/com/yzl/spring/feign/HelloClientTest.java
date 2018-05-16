@@ -1,7 +1,7 @@
 package com.yzl.spring.feign;
 
-import com.yzl.spring.feign.remote.HelloClient;
 import com.yzl.spring.feign.dto.User;
+import com.yzl.spring.feign.remote.HelloClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +21,12 @@ public class HelloClientTest {
 
     @Test
     public void testClient() throws Exception {
-        String result = helloClient.hello("yzl");
-        System.out.println(result);
+//        String result = helloClient.hello("yzl");
+//        System.out.println(result);
 
-        User user = helloClient.hello("yzl", 30);
-        System.out.println(user);
+//        User user = helloClient.hello("yzl", 30);
+//        System.out.println(user);
+
+        helloClient.hello(new User("yzl",12));
     }
 }
