@@ -36,6 +36,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>com.yzl.spring.test</groupId>
 			<artifactId>hello-service-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
