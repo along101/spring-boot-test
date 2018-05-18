@@ -1,5 +1,6 @@
 package com.yzl.spring.actuator;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
@@ -24,5 +25,40 @@ public class MyHealth implements HealthIndicator {
             health = Health.down().withDetail("myHealth", "wrong").build();
         }
         return health;
+    }
+
+    public static void main(String[] args) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        A a = new A();
+        a.setA("ppdai");
+        a.setB("ppdai".getBytes());
+
+        String json = objectMapper.writeValueAsString(a);
+
+        System.out.println(json);
+
+        A newA = objectMapper.readValue(json, A.class);
+        System.out.println(new String(newA.getB()));
+    }
+
+    static class A {
+        byte[] b;
+        String a;
+
+        public byte[] getB() {
+            return b;
+        }
+
+        public void setB(byte[] b) {
+            this.b = b;
+        }
+
+        public String getA() {
+            return a;
+        }
+
+        public void setA(String a) {
+            this.a = a;
+        }
     }
 }

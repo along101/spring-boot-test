@@ -3,8 +3,11 @@ package com.yzl.spring.feign.service;
 import com.yzl.spring.feign.dto.User;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/test")
-public interface HelloService {
+/**
+ * @author yinzuolong
+ */
+@RequestMapping("/test1")
+public interface HelloService1 {
 
     @RequestMapping(value = "/hello1", method = RequestMethod.GET)
     String hello(@RequestParam("name") String name);
