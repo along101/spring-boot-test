@@ -24,6 +24,7 @@
         <module>archaius-test</module>
         <module>spring-test</module>
         <module>spring-boot-http2</module>
+        <module>spring-boot-properties</module>
     </modules>
 
     <properties>
