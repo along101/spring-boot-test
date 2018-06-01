@@ -22,4 +22,5 @@ public class TestApplication {
     public void init() {
         System.out.println(myProperties);
     }
+
 }
