@@ -10,8 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.undertow.UndertowBuilderCustomizer;
 import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @Configuration
@@ -47,5 +49,10 @@ public class MyApplication {
                     .setConfidentialPortManager(exchange -> 8443);
         });
         return factory;
+    }
+
+    @Bean
+    public RestTemplate createRestTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
 }
