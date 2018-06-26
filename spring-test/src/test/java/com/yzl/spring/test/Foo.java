@@ -20,6 +20,8 @@ public class Foo {
 
     private Map<String, Bar> barMap;
 
+    private byte[] data;
+
     public String getName() {
         return name;
     }
@@ -66,5 +68,13 @@ public class Foo {
 
     public void setBar(Bar bar) {
         this.bar = bar;
+    }
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
     }
 }

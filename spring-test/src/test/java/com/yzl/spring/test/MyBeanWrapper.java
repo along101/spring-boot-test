@@ -17,19 +17,17 @@ public class MyBeanWrapper extends BeanWrapperImpl {
     public List<String> getValues() {
         List<String> s = new LinkedList<>();
         Object w = this.getWrappedInstance();
-        if (w == null) {
-            return s;
-        }
-        PropertyDescriptor[] pds = this.getPropertyDescriptors();
-        for (int i = 0; i < pds.length; i++) {
-            if (Map.class.isAssignableFrom(pds[i].getPropertyType())) {
-                test(pds[i]);
-            } else if (List.class.isAssignableFrom(pds[i].getPropertyType())) {
-                test(pds[i]);
-            } else if (Bar.class.isAssignableFrom(pds[i].getPropertyType())) {
-                test(pds[i]);
+        if (w != null) {
+            PropertyDescriptor[] pds = this.getPropertyDescriptors();
+            for (int i = 0; i < pds.length; i++) {
+                if (Map.class.isAssignableFrom(pds[i].getPropertyType())) {
+                    test(pds[i]);
+                } else if (List.class.isAssignableFrom(pds[i].getPropertyType())) {
+                    test(pds[i]);
+                } else if (Bar.class.isAssignableFrom(pds[i].getPropertyType())) {
+                    test(pds[i]);
+                }
             }
-
         }
         return s;
     }
