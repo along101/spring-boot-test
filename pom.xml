@@ -25,6 +25,7 @@
         <module>spring-test</module>
         <module>spring-boot-http2</module>
         <module>spring-boot-properties</module>
+        <module>spring-mockmvc-test</module>
     </modules>
 
     <properties>
