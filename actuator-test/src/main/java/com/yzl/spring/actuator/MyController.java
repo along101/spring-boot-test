@@ -2,14 +2,7 @@ package com.yzl.spring.actuator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.metrics.GaugeService;
-import org.springframework.boot.actuate.metrics.writer.Delta;
-import org.springframework.boot.actuate.metrics.writer.GaugeWriter;
-import org.springframework.boot.actuate.metrics.writer.MetricWriter;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,9 +28,10 @@ public class MyController {
     @RequestMapping("/test")
     public Object test() {
         HashMap<Object, Object> map = new HashMap<>();
-        map.put("1","2");
+        map.put("1", "2");
         return map;
     }
+
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public Object testPost(@RequestBody Map<String, String> map) {
         if (map == null) {
@@ -67,4 +61,34 @@ public class MyController {
     public void setHealth(boolean health) {
         isHealth = health;
     }
+
+
+    @GetMapping("/get1")
+    public Test get1() {
+        Test t = new Test();
+        t.a = "12";
+        return t;
+    }
+
+    public static class Test {
+        private String a;
+        private String b;
+
+        public String getA() {
+            return a;
+        }
+
+        public void setA(String a) {
+            this.a = a;
+        }
+
+        public String getB() {
+            return b;
+        }
+
+        public void setB(String b) {
+            this.b = b;
+        }
+    }
+
 }

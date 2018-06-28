@@ -30,8 +30,8 @@ public class MyHealth implements HealthIndicator {
     public static void main(String[] args) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         A a = new A();
-        a.setA("ppdai");
-        a.setB("ppdai".getBytes());
+        a.setA("yzl");
+        a.setB("yzl".getBytes());
 
         String json = objectMapper.writeValueAsString(a);
 
