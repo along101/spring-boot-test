@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by yinzuolong on 2017/10/24.
  */
-public class TestProperties {
+public class PropertySourcesTest {
     @Test
     public void test() throws Exception {
 
