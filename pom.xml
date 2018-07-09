@@ -22,7 +22,7 @@
         <module>spring-DefferedResult-test</module>
         <module>close-context</module>
         <module>archaius-test</module>
-        <module>spring-test</module>
+        <module>spring-beanwrapper-test</module>
         <module>spring-boot-http2</module>
         <module>spring-boot-properties</module>
         <module>spring-mockmvc-test</module>
