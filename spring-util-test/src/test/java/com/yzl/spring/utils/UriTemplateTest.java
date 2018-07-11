@@ -4,5 +4,5 @@ package com.yzl.spring.utils;
  * @author yinzuolong
  */
 //TODO
-public class SystemPropertyUtilsTest {
+public class UriTemplateTest {
 }
