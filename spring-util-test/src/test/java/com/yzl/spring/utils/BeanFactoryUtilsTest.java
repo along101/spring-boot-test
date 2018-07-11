@@ -13,7 +13,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Map;
 
 /**
- * Created by yinzuolong on 2017/11/24.
+ * bean工厂工具
+ *
+ * @author yinzuolong
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BeanFactoryUtilsTest.TestApplication.class)

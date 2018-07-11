@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.reflect.Method;
 
 /**
- * Created by yinzuolong on 2017/11/24.
+ * 注解工具,在AnnotationUtils基础上增加了更强大的方法
+ *
+ * @author yinzuolong
  */
 public class AnnotatedElementUtilsTest {
 
@@ -31,7 +33,6 @@ public class AnnotatedElementUtilsTest {
         Assert.assertEquals(requestMapping.method()[0], RequestMethod.GET);
 
     }
-
 
     @RestController
     public static class A {

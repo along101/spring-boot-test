@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 import java.util.Set;
 
 /**
- * 包扫描测试
+ * 包扫描例子
  *
  * @author yinzuolong
  */

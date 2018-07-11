@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * 很强的资源解析器，很方便的获取到classpath包括jar包中的资源文件
+ *
  * @author yinzuolong
  */
 public class PathMatchingResourcePatternResolverTest {

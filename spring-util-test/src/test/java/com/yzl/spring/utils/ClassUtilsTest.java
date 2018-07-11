@@ -1,8 +1,20 @@
 package com.yzl.spring.utils;
 
+import org.junit.Test;
+import org.springframework.util.ClassUtils;
+
+import java.lang.reflect.Method;
+
 /**
- * Created by yinzuolong on 2017/11/24.
+ * Class工具类,对class的一些反射获取,功能很强大
+ *
+ * @author yinzuolong
  */
-//TODO
 public class ClassUtilsTest {
+
+    @Test
+    public void test() {
+        Method method = ClassUtils.getMethodIfAvailable(String.class, "compareTo", String.class);
+        System.out.println(ClassUtils.getQualifiedMethodName(method));
+    }
 }

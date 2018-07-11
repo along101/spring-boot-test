@@ -7,6 +7,7 @@ import org.springframework.core.io.support.SpringFactoriesLoader;
 import java.util.List;
 
 /**
+ * SpringFactoriesLoader 读取 META-INF/spring.fatories配置中的信息
  * @author yinzuolong
  */
 public class SpringFactoriesLoaderTest {

@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.springframework.util.AntPathMatcher;
 
 /**
+ * Ant风格path匹配器
+ *
  * @author yinzuolong
  */
 public class AntPathMatcherTest {

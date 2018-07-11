@@ -9,7 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by yinzuolong on 2017/10/24.
+ * spring中属性占位使用
+ * Created by yinzuolong
  */
 public class PropertySourcesTest {
     @Test
@@ -26,6 +27,7 @@ public class PropertySourcesTest {
         map.put("k8", "${kx:${ky:8080}}");
         MutablePropertySources propertySources = new MutablePropertySources();
         propertySources.addFirst(new MapPropertySource("t1", map));
+
         PropertySourcesPropertyResolver p = new PropertySourcesPropertyResolver(propertySources);
         for (String key : map.keySet()) {
             System.out.println(key + ":" + p.getProperty(key));

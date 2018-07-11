@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Properties;
 
 /**
+ * 属性文件加载工具
+ *
  * @author yinzuolong
  */
 public class PropertiesLoaderUtilsTest {

@@ -5,7 +5,9 @@ import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
 /**
- * Created by yinzuolong on 2017/11/24.
+ * Bean工具类,比较好用的是copyProperties
+ *
+ * @author yinzuolong
  */
 public class BeanUtilsTest {
 

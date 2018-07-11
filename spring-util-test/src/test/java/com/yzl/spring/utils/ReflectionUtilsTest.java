@@ -7,9 +7,10 @@ import org.springframework.util.ReflectionUtils;
 import java.lang.reflect.Field;
 
 /**
+ * 反射工具，能很方便的获取字段/方法，修改可见性
+ *
  * @author yinzuolong
  */
-//TODO
 public class ReflectionUtilsTest {
 
     @Test

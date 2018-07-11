@@ -8,7 +8,8 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Created by yinzuolong on 2017/10/24.
+ * 资源类，Resource各种实现
+ * Created by yinzuolong
  */
 public class ResourceTest {
     @Test

@@ -11,6 +11,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * 泛型参数获取
+ */
 public class GenericTest {
 
     private List<String> forField;

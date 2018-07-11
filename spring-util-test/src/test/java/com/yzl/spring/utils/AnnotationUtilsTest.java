@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.reflect.Method;
 
 /**
- * Created by yinzuolong on 2017/11/24.
+ * 注解工具
+ *
+ * @author yinzuolong
  */
 public class AnnotationUtilsTest {
 
