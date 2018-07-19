@@ -30,13 +30,18 @@ public class HandlerMappingPostProcessor implements BeanPostProcessor {
             Map<RequestMappingInfo, HandlerMethod> maps = mapping.getHandlerMethods();
             for (HandlerMethod handlerMethod : maps.values()) {
                 MethodParameter[] parameters = handlerMethod.getMethodParameters();
-                List<Method> superMethods = findInterfaceMethods(handlerMethod.getMethod());
                 for (int i = 0; i < parameters.length; i++) {
                     MethodParameter parameter = parameters[i];
-                    Annotation[] parameterAnnotations = parameter.getParameterAnnotations();
-                    List<Annotation> superMethodParameterAnnotations = combineMethodParameterAnnotations(superMethods, parameter.getParameterIndex());
-                    superMethodParameterAnnotations.addAll(0, Arrays.asList(parameterAnnotations));
-                    Annotation[] newParameterAnnotations = superMethodParameterAnnotations.toArray(new Annotation[superMethodParameterAnnotations.size()]);
+                    Annotation[] parameterAnnotation = parameter.getParameterAnnotations();
+                    Method superMethod = findInterfaceMethod(parameter.getMethod());
+                    if (superMethod == null) {
+                        continue;
+                    }
+                    Annotation[][] superMethodParameterAnnotations = superMethod.getParameterAnnotations();
+                    Annotation[] superParameterAnnotation = superMethodParameterAnnotations[parameter.getParameterIndex()];
+                    Annotation[] newParameterAnnotation = new Annotation[parameterAnnotation.length + superParameterAnnotation.length];
+                    System.arraycopy(parameterAnnotation, 0, newParameterAnnotation, 0, parameterAnnotation.length);
+                    System.arraycopy(superParameterAnnotation, 0, newParameterAnnotation, parameterAnnotation.length, superParameterAnnotation.length);
                     MethodParameter newParameter = new MethodParameter(parameter) {
                         /**
                          * 覆盖父类方法，返回合并接口注解的数组
@@ -44,7 +49,7 @@ public class HandlerMappingPostProcessor implements BeanPostProcessor {
                          */
                         @Override
                         public Annotation[] getParameterAnnotations() {
-                            return newParameterAnnotations;
+                            return newParameterAnnotation;
                         }
                     };
                     parameters[i] = newParameter;
@@ -55,25 +60,12 @@ public class HandlerMappingPostProcessor implements BeanPostProcessor {
         return bean;
     }
 
-    private List<Annotation> combineMethodParameterAnnotations(List<Method> methods, int paramIndex) {
-        List<Annotation> annotations = new ArrayList<>();
-        for (Method method : methods) {
-            Annotation[][] parameterAnnotations = method.getParameterAnnotations();
-            if (paramIndex < parameterAnnotations.length) {
-                annotations.addAll(Arrays.asList(parameterAnnotations[paramIndex]));
-            }
-        }
-        return annotations;
-    }
-
     /**
      * 找到方法实现的接口方法
-     *
      * @param method
      * @return
      */
-    private List<Method> findInterfaceMethods(Method method) {
-        List<Method> methods = new ArrayList<>();
+    private Method findInterfaceMethod(Method method) {
         Set<Class<?>> interfaces = ClassUtils.getAllInterfacesForClassAsSet(method.getDeclaringClass());
         for (Class<?> superInterface : interfaces) {
             Method superMethod = null;
@@ -83,10 +75,9 @@ public class HandlerMappingPostProcessor implements BeanPostProcessor {
                 //忽略异常
             }
             if (superMethod != null) {
-                methods.add(superMethod);
+                return superMethod;
             }
         }
-        return methods;
+        return null;
     }
-
 }

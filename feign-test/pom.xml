@@ -11,7 +11,8 @@
     <modules>
         <module>hello-service-api</module>
         <module>hello-service</module>
-        <module>hello-client</module>
+        <module>hello-client-url</module>
+        <module>hello-client-eureka</module>
         <module>hello-service-eureka</module>
     </modules>
 
