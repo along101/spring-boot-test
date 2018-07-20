@@ -13,8 +13,8 @@ public class HelloController1 implements HelloService1 {
     }
 
     @Override
-    public User hello(String name, Integer age) {
-        return new User(name, age);
+    public User hello(String name, Integer a) {
+        return new User(name, a);
     }
 
     @Override

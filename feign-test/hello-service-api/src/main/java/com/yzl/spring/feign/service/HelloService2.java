@@ -10,7 +10,7 @@ public interface HelloService2 {
     String hello(@RequestParam("name") String name);
 
     @RequestMapping(value = "/hello2", method = RequestMethod.GET)
-    User hello(@RequestParam("name") String name, @RequestHeader("age") Integer age);
+    User hello(@RequestParam("name") String name, @RequestParam("age") Integer a);
 
     @RequestMapping(value = "/hello3", method = RequestMethod.POST)
     String hello(@RequestBody User user);

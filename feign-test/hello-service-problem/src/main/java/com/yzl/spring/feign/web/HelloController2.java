@@ -16,8 +16,8 @@ public class HelloController2 implements HelloService2 {
     }
 
     @Override
-    public User hello(@RequestParam("name") String name, @RequestHeader("age") Integer age) {
-        return new User(name, age);
+    public User hello(@RequestParam("name") String name, @RequestParam("age") Integer a) {
+        return new User(name, a);
     }
 
     @Override

@@ -12,18 +12,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hello-service-eureka</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.yzl.spring.test</groupId>
-            <artifactId>hello-service-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

@@ -14,6 +14,7 @@
         <module>hello-client-url</module>
         <module>hello-client-eureka</module>
         <module>hello-service-eureka</module>
+        <module>hello-service-problem</module>
     </modules>
 
 

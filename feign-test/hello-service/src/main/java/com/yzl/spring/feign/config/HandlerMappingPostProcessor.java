@@ -3,6 +3,7 @@ package com.yzl.spring.feign.config;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.MethodParameter;
+import org.springframework.core.annotation.SynthesizingMethodParameter;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
@@ -10,7 +11,8 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 后置处理器，解决springMVC接口方法参数的注解无法被继承的问题。
@@ -42,18 +44,10 @@ public class HandlerMappingPostProcessor implements BeanPostProcessor {
                     Annotation[] newParameterAnnotation = new Annotation[parameterAnnotation.length + superParameterAnnotation.length];
                     System.arraycopy(parameterAnnotation, 0, newParameterAnnotation, 0, parameterAnnotation.length);
                     System.arraycopy(superParameterAnnotation, 0, newParameterAnnotation, parameterAnnotation.length, superParameterAnnotation.length);
-                    MethodParameter newParameter = new MethodParameter(parameter) {
-                        /**
-                         * 覆盖父类方法，返回合并接口注解的数组
-                         * @return
-                         */
-                        @Override
-                        public Annotation[] getParameterAnnotations() {
-                            return newParameterAnnotation;
-                        }
-                    };
-                    parameters[i] = newParameter;
-
+                    if (parameter instanceof SynthesizingMethodParameter) {
+                        MethodParameter newParameter = new NewHandlerMethodParameter((SynthesizingMethodParameter) parameter, newParameterAnnotation);
+                        parameters[i] = newParameter;
+                    }
                 }
             }
         }
@@ -62,6 +56,7 @@ public class HandlerMappingPostProcessor implements BeanPostProcessor {
 
     /**
      * 找到方法实现的接口方法
+     *
      * @param method
      * @return
      */
