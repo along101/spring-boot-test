@@ -25,6 +25,8 @@ public class PropertySourcesTest {
         map.put("k6", "${kx:${k1}}");
         map.put("k7", "${kx:localhost:123}");
         map.put("k8", "${kx:${ky:8080}}");
+        map.put("中文","中国");
+        map.put("杭州","${中文}-杭州");
         MutablePropertySources propertySources = new MutablePropertySources();
         propertySources.addFirst(new MapPropertySource("t1", map));
 

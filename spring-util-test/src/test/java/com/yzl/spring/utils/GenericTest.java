@@ -7,9 +7,11 @@ import org.springframework.core.ResolvableType;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 泛型参数获取
@@ -18,11 +20,21 @@ public class GenericTest {
 
     private List<String> forField;
 
+    private Map<String, List<String>> mapField;
+
     @Test
     public void testForField() {
         Field field = ReflectionUtils.findField(GenericTest.class, "forField");
         ResolvableType resolvableType = ResolvableType.forField(field);
         Assert.assertEquals(String.class, resolvableType.getGeneric(0).getRawClass());
+    }
+
+    @Test
+    public void testMapField() {
+        Field field = ReflectionUtils.findField(GenericTest.class, "mapField");
+        ResolvableType resolvableType = ResolvableType.forField(field);
+        Type t = resolvableType.getType();
+        System.out.println(resolvableType.getGeneric(1).getGeneric(0));
     }
 
     @Test
