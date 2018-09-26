@@ -27,6 +27,7 @@
         <module>spring-boot-properties</module>
         <module>spring-mockmvc-test</module>
         <module>spring-boot-mybatis</module>
+        <module>spring-boot-schedule</module>
     </modules>
 
     <properties>
