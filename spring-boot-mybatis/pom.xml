@@ -15,6 +15,7 @@
     <modules>
         <module>mybatis-spring-boot-sample-annotation</module>
         <module>mybatis-spring-boot-sample-xml</module>
+        <module>mybatis-generator-plugin-test</module>
     </modules>
 
 </project>
