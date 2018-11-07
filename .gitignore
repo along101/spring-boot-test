@@ -31,11 +31,3 @@ logs/
 Thumbs.db
 
 *.class
-
-# front project
-pslb-front/dist/
-pslb-front/node_modules/
-pslb-front/.idea
-pslb-front/*.iws
-pslb-front/*.iml
-pslb-front/*.ipr
