@@ -28,6 +28,7 @@
         <module>spring-mockmvc-test</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-schedule</module>
+        <module>spring-boot-freemarker</module>
     </modules>
 
     <properties>
