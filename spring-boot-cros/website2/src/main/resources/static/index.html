@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Spring Boot Demo</title>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+function test(){
+    $.ajax({
+        type:"GET",
+        url:"http://127.0.0.1:8082/test",
+        success:function(rs){
+            $("#result").val(rs)
+        },
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true
+    });
+}
+function getTest(){
+    $.ajax({
+        type:"GET",
+        url:"http://127.0.0.1:8082/get",
+        success:function(rs){
+            $("#result").val(rs)
+        },
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true
+    });
+}
+
+function postTest(){
+    $.ajax({
+        type:"POST",
+        url:"http://127.0.0.1:8082/post",
+        data:{
+            key1:"abc",
+            key2:"ccc"
+        },
+        success:function(rs){
+            $("#result").val(rs)
+        },
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true
+    });
+}
+
+function postJsonTest(){
+    $.ajax({
+        type:"POST",
+        url:"http://127.0.0.1:8082/postjson",
+        data:JSON.stringify({
+            key1:"abc",
+            key2:"ccc"
+        }),
+        contentType: 'application/json',
+        success:function(rs){
+            $("#result").val(JSON.stringify(rs))
+        },
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true
+    });
+}
+
+
+
+    </script>
+</head>
+<body>
+
+<button type="button" onclick="test()">test</button><br>
+<button onclick="getTest()">get</button>跨域发请求<br>
+<button onclick="postTest()">post</button><br>
+<button onclick="postJsonTest()">post json</button>
+post json是复杂请求，先发OPTIONS，试探是否能跨域，如果能再发POST请求
+<p></p>
+<textarea id="result" rows="20" cols="100">result</textarea>
+<script>
+
+
+</script>
+</body>
+</html>

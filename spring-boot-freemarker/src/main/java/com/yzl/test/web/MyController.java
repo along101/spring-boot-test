@@ -5,6 +5,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @author yutu
  * @date 2018/12/25
@@ -14,7 +18,8 @@ public class MyController {
 
     @ResponseBody
     @RequestMapping(path = "/test")
-    public String test() {
+    public String test(HttpServletRequest request, HttpServletResponse response) {
+        response.addCookie(new Cookie("abx", "123"));
         return "123";
     }
 

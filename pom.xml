@@ -29,6 +29,7 @@
         <module>spring-boot-mybatis</module>
         <module>spring-boot-schedule</module>
         <module>spring-boot-freemarker</module>
+        <module>spring-boot-cros</module>
     </modules>
 
     <properties>
