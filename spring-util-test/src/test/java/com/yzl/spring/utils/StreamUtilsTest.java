@@ -1,6 +1,7 @@
 package com.yzl.spring.utils;
 
 import org.junit.Test;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.util.StreamUtils;
@@ -24,5 +25,11 @@ public class StreamUtilsTest {
             String txt = StreamUtils.copyToString(in, StandardCharsets.UTF_8);
             System.out.println(txt);
         }
+    }
+
+    @Test
+    public void test2() throws IOException {
+        String txt = StreamUtils.copyToString(new ClassPathResource("readme.txt").getInputStream(), StandardCharsets.UTF_8);
+        System.out.println(txt);
     }
 }
