@@ -41,6 +41,8 @@ public class GenericTest {
     public void test1() {
         Class<?>[] genericClasses = GenericTypeResolver.resolveTypeArguments(MyMap1.class, HashMap.class);
         System.out.println(Arrays.asList(genericClasses));
+        Type[] types = MyMap1.class.getGenericInterfaces();
+        System.out.println(types);
     }
 
     @Test

@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yzl.spring.test</groupId>
-    <artifactId>spring-boot-test</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+  <groupId>com.yzl.spring.test</groupId>
+  <artifactId>spring-boot-test</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-    <name>spring-boot-test</name>
-    <description>Demo project for Spring Boot</description>
+  <name>spring-boot-test</name>
+  <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>actuator-test</module>
-        <module>spring-lifecycle-test</module>
-        <module>feign-test</module>
-        <module>spring-util-test</module>
-        <module>annotation-demo</module>
-        <module>spring-event</module>
-        <module>spring-inject</module>
-        <module>spring-DefferedResult-test</module>
-        <module>close-context</module>
-        <module>archaius-test</module>
-        <module>spring-beanwrapper-test</module>
-        <module>spring-boot-http2</module>
-        <module>spring-boot-properties</module>
-        <module>spring-mockmvc-test</module>
-        <module>spring-boot-mybatis</module>
-        <module>spring-boot-schedule</module>
-        <module>spring-boot-freemarker</module>
-        <module>spring-boot-cros</module>
-    </modules>
+  <modules>
+    <module>actuator-test</module>
+    <module>spring-lifecycle-test</module>
+    <module>feign-test</module>
+    <module>spring-util-test</module>
+    <module>annotation-demo</module>
+    <module>spring-event</module>
+    <module>spring-inject</module>
+    <module>spring-DefferedResult-test</module>
+    <module>close-context</module>
+    <module>archaius-test</module>
+    <module>spring-beanwrapper-test</module>
+    <module>spring-boot-http2</module>
+    <module>spring-boot-properties</module>
+    <module>spring-mockmvc-test</module>
+    <module>spring-boot-mybatis</module>
+    <module>spring-boot-schedule</module>
+    <module>spring-boot-freemarker</module>
+    <module>spring-boot-cros</module>
+    <module>spring-junit-profile</module>
+  </modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+  </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
