@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
-public class LangPollController {
+public class LongPollController {
 
     private Map<String, Set<DeferredResult<String>>> connectMap = new ConcurrentHashMap<>();
 
