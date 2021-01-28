@@ -73,8 +73,7 @@ public class Person implements BeanFactoryAware, BeanNameAware,
     // 这是InitializingBean接口方法
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out
-                .println("【InitializingBean接口】调用InitializingBean.afterPropertiesSet()");
+        System.out.println("【InitializingBean接口】调用InitializingBean.afterPropertiesSet()");
     }
 
     // 这是DiposibleBean接口方法
