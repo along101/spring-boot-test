@@ -1,0 +1,3 @@
+# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+  com.yzl.spring.test.MyApplicationContextInitializer
