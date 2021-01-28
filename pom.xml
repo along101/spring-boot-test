@@ -31,6 +31,7 @@
     <module>spring-boot-freemarker</module>
     <module>spring-boot-cros</module>
     <module>spring-junit-profile</module>
+    <module>cglib-test</module>
   </modules>
 
   <properties>
