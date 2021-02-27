@@ -33,6 +33,7 @@
     <module>spring-junit-profile</module>
     <module>cglib-test</module>
     <module>mock-bean-test</module>
+    <module>spring-aop</module>
   </modules>
 
   <properties>

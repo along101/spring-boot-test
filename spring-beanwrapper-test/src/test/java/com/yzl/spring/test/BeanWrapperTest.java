@@ -36,8 +36,10 @@ public class BeanWrapperTest {
 
         MyBeanWrapper myBeanWrapper = new MyBeanWrapper();
         myBeanWrapper.setWrappedInstance(foo);
-        myBeanWrapper.getValues();
+        pvs = new MutablePropertyValues();
+        pvs.addPropertyValue("name", "123");
+        beanWrapper.setPropertyValues(pvs);
 
-        System.out.println(myBeanWrapper);
+        System.out.println(foo.getName());
     }
 }
