@@ -1,0 +1,12 @@
+{
+  "demo1":{
+    "$case": "case/demo/demo1.json"
+  },
+  "demo2":{
+    "$case": "case/demo/demo2.json"
+  },
+  "demos":[
+    {"$ref":"$.demo1"},
+    {"$ref":"$.demo2"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "demoMap": {
+    "demo1": {
+      "@type":"com.yzl.spring.test.tool.data.bean.MyDemo1",
+      "a": "a",
+      "b": 2,
+      "id": "1"
+    }
+  }
+}

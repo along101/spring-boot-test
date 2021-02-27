@@ -1,0 +1,7 @@
+{
+  "demoMap": {
+    "demo1": {
+      "$case": "case/demo/demo1.json"
+    }
+  }
+}

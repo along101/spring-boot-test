@@ -1,0 +1,6 @@
+{
+  "@type":"com.yzl.spring.test.tool.data.bean.MyDemo2",
+  "c": "c",
+  "d": 3,
+  "id": "2"
+}

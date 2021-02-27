@@ -34,6 +34,7 @@
     <module>cglib-test</module>
     <module>mock-bean-test</module>
     <module>spring-aop</module>
+    <module>spring-test-tool</module>
   </modules>
 
   <properties>
