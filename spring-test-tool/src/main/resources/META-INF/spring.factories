@@ -1,0 +1,7 @@
+# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+  com.yzl.spring.test.tool.mock.init.MyContextInitializer
+
+# Spring Test ContextCustomizerFactories
+org.springframework.test.context.ContextCustomizerFactory=\
+  com.yzl.spring.test.tool.mock.init.MyTestContextCustomizerFactory

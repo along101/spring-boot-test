@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 测试案例工具
+ * 测试案例数据工具类
  * 测试案例放在resources目录下，一般是xxx.json文件
  * 数据之间可以相互引用，使用$case设置引用的文件
  * 使用@type字段定义该json的实际类，主要是避免抽象类的
