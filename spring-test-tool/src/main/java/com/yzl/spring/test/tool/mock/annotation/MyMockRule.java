@@ -49,13 +49,13 @@ public @interface MyMockRule {
      *
      * @return
      */
-    Class<?>[] annotation() default {};
+    Class<?>[] annotations() default {};
 
     /**
-     * 可以通过beanName、beanClass、factoryClass、annotation写ql表达式
+     * 可以通过beanName、beanClass、factoryClass、annotations写ql表达式
      * 表达式结果为true，则需要mock改bean，例如：
      * beanClass like 'com.yzl.spring.test.tool.mock%'
-     *
+     * annotations.size() > 0 and annotations.get(0) like '%xxx%'
      * @return
      */
     String expression() default "";

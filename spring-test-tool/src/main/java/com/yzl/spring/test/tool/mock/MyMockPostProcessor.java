@@ -174,7 +174,7 @@ public class MyMockPostProcessor implements BeanFactoryPostProcessor, BeanClassL
         List<String> beanNames = Arrays.asList(myMock.beanName());
         List<String> beanClasses = convert(myMock.beanClass(), Class::getName);
         List<String> factoryClasses = convert(myMock.factoryClass(), Class::getName);
-        List<String> annotations = convert(myMock.annotation(), Class::getName);
+        List<String> annotations = convert(myMock.annotations(), Class::getName);
         String expression = myMock.expression();
 
         for (String beanName : this.allBeans.keySet()) {
@@ -189,7 +189,7 @@ public class MyMockPostProcessor implements BeanFactoryPostProcessor, BeanClassL
         List<String> beanNames = Arrays.asList(myMockExclude.beanName());
         List<String> beanClasses = convert(myMockExclude.beanClass(), Class::getName);
         List<String> factoryClasses = convert(myMockExclude.factoryClass(), Class::getName);
-        List<String> annotations = convert(myMockExclude.annotation(), Class::getName);
+        List<String> annotations = convert(myMockExclude.annotations(), Class::getName);
         String expression = myMockExclude.expression();
 
         for (String beanName : this.mockBeans.keySet()) {
@@ -266,7 +266,7 @@ public class MyMockPostProcessor implements BeanFactoryPostProcessor, BeanClassL
                         }
                     });
                 } catch (Exception e) {
-                    log.warn("error set annotation", e);
+                    log.warn("error set annotations", e);
                 }
                 //把所有注解的属性拿出来
                 for (String annotation : ambd.getAnnotations()) {

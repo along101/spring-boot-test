@@ -37,9 +37,9 @@ public @interface MyMockExclude {
 
     /**
      * @return
-     * @see MyMockRule#annotation()
+     * @see MyMockRule#annotations()
      */
-    Class<?>[] annotation() default {};
+    Class<?>[] annotations() default {};
 
     /**
      * @return
