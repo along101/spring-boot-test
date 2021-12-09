@@ -5,9 +5,6 @@ import sample.mybatis.domain.City;
 
 import org.springframework.stereotype.Component;
 
-/**
- * @author Eddú Meléndez
- */
 @Component
 public class CityDao {
 

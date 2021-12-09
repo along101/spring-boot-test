@@ -2,9 +2,6 @@ package sample.mybatis.domain;
 
 import java.io.Serializable;
 
-/**
- * @author Eddú Meléndez
- */
 public class City implements Serializable {
 
 	private static final long serialVersionUID = 1L;
