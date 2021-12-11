@@ -24,7 +24,7 @@ public interface CityMapper {
 
     @Insert("insert into city(name,state,country)" +
             "values(#{name},#{state},#{country})")
-    @Options(useGeneratedKeys = true, keyColumn = "id")
+    @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")
     int insert(City city);
 
     @Delete("delete from city where id = #{id}")
