@@ -1,0 +1,6 @@
+GET http://localhost:8082/poll?testId=1
+Accept: application/json
+
+###
+http://localhost:8082/notify?testId=1&value=112
+Accept: application/json

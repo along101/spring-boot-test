@@ -2,6 +2,7 @@ package com.yzl.spring.event.listener;
 
 import com.yzl.spring.event.event.Event;
 import com.yzl.spring.event.event.EventExtendsClass;
+import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,12 @@ public class ListenerWithAnnotation {
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent event) {
         System.out.println("From ListenerWithAnnotation. Event: ContextRefreshedEvent.");
+        System.out.println(event.getApplicationContext().toString());
+    }
+
+    @EventListener
+    public void onCloseEvent(ContextClosedEvent event) {
+        System.out.println("From ListenerWithAnnotation. Event: ContextClosedEvent.");
         System.out.println(event.getApplicationContext().toString());
     }
 

@@ -24,7 +24,7 @@ public class LongPollController {
      */
     @RequestMapping("poll")
     public DeferredResult<String> poll(@RequestParam("testId") String testId) {
-        DeferredResult<String> deferredResult = new DeferredResult<>(10 * 1000L, testId + " time out!");
+        DeferredResult<String> deferredResult = new DeferredResult<>(50 * 1000L, testId + " time out!");
         Set<DeferredResult<String>> set = connectMap.putIfAbsent(testId, Collections.synchronizedSet(new HashSet<>()));
         if (set == null) {
             set = connectMap.get(testId);
@@ -32,7 +32,9 @@ public class LongPollController {
         Set<DeferredResult<String>> finalSet = set;
         set.add(deferredResult);
 
-        deferredResult.onCompletion(() -> finalSet.remove(deferredResult));
+        deferredResult.onCompletion(() -> {
+            finalSet.remove(deferredResult);
+        });
         deferredResult.onTimeout(() -> System.out.println("poll " + testId + " time out!"));
         return deferredResult;
     }
@@ -51,7 +53,8 @@ public class LongPollController {
             if (result.isSetOrExpired()) {
                 return;
             }
-            result.setResult("testId " + testId + " value is " + value);
+            boolean b = result.setResult("testId " + testId + " value is " + value);
+            System.out.println("set result: " + b);
         });
         return "notified " + results.size() + " of testId " + testId;
     }

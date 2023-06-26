@@ -1,6 +1,7 @@
 package com.yzl.test;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.WebAsyncTask;
 
@@ -31,11 +32,11 @@ public class AsyncCallableController {
      * @return
      */
     @RequestMapping("timeout")
-    public WebAsyncTask<String> executeTimeTask() {
+    public WebAsyncTask<String> executeTimeTask(@RequestParam("time") int time) {
 
         System.out.println("start...");
         Callable<String> callable = () -> {
-            Thread.sleep(5000);
+            Thread.sleep(time);
             return "123";
         };
         WebAsyncTask<String> asyncTask = new WebAsyncTask<>(2000, callable);
